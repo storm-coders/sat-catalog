@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.2.6.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id 'jacoco'
 }
 
 group = 'com.conta.cloud.sat'
@@ -39,4 +40,48 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+def jacocoExclude = ['com/conta/cloud/sat/SatCatalogApplication**']
+
+jacoco {
+	toolVersion = '0.8.5'
+	reportsDir = file('$buildDir/reports/jacoco')
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled false
+		csv.enabled false
+		html.destination file("${buildDir}/jacoco")
+	}
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it,
+					exclude: jacocoExclude
+			)
+		}))
+	}
+}
+
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			limit {
+				minimum = 0.1
+			}
+		}
+
+		rule {
+			enabled = false
+			element = 'CLASS'
+			includes = ['com.conta.cloud.sat.*']
+
+			limit {
+				counter = 'LINE'
+				value = 'TOTALCOUNT'
+				maximum = 0.9
+			}
+		}
+	}
 }
