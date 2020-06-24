@@ -59,7 +59,10 @@ test {
 	useJUnitPlatform()
 }
 
-def jacocoExclude = ['com/conta/cloud/sat/SatCatalogApplication**']
+def jacocoExclude = ['com/conta/cloud/sat/SatCatalogApplication**',
+					'com/conta/cloud/sat/config/**',
+					'exception/**',
+					'com/conta/cloud/sat/mappers/**']
 
 jacoco {
 	toolVersion = '0.8.5'
@@ -85,7 +88,7 @@ jacocoTestCoverageVerification {
 	violationRules {
 		rule {
 			limit {
-				minimum = 0.1
+				minimum = 0.8
 			}
 		}
 
