@@ -1,8 +1,7 @@
 package exception;
 
-import java.util.HashSet;
-import java.util.Set;
-
+import java.util.ArrayList;
+import java.util.List;
 import com.conta.cloud.sat.service.ErrorCode;
 
 import lombok.AllArgsConstructor;
@@ -16,7 +15,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class CatalogException extends Exception{
 	private ErrorCode code;
-	private Set<ErrorDetail> errors = new HashSet<ErrorDetail>();
+	private List<ErrorDetail> errors = new ArrayList<ErrorDetail>();
 	/**
 	 * 
 	 */
