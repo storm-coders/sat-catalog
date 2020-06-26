@@ -1,6 +1,6 @@
-package com.conta.cloud.sat.rest;
+package com.conta.cloud.sat.rest.exception;
 
-import java.util.Set;
+import java.util.List;
 
 import com.conta.cloud.sat.service.ErrorCode;
 
@@ -12,7 +12,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ErrorWrapperResponse {
+public class ApiError {
 	private ErrorCode code;
-	private Set<ErrorDetail> errors;
+	private List<ErrorDetail> errors;
+	
+	public void addError(ErrorDetail detail) {
+		errors.add(detail);
+	}
 }
