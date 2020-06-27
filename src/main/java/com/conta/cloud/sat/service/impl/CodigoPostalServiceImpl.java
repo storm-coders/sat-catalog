@@ -1,6 +1,7 @@
 package com.conta.cloud.sat.service.impl;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.stream.Collectors;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -19,6 +20,7 @@ import com.conta.cloud.sat.persistence.CodigoPostalRepository;
 import com.conta.cloud.sat.service.CodigoPostalService;
 import com.conta.cloud.sat.service.ErrorCode;
 import exception.CatalogException;
+import exception.ErrorDetail;
 import lombok.Generated;
 import lombok.extern.slf4j.Slf4j;
 
@@ -47,7 +49,8 @@ public class CodigoPostalServiceImpl implements CodigoPostalService {
 		} catch (Exception e) {
 			log.error("Unable to select CodigoPostal from database - idEstado: {} - idMunicipio: {} - cp: {}",
 					idEstado, idMunicipio, codigoPostal, e);
-			CatalogException exception = new CatalogException(ErrorCode.INTERNAL);
+			CatalogException exception = new CatalogException(ErrorCode.INTERNAL,
+					Collections.singletonList(new ErrorDetail("500", "Error al seleccionar código postal")));
 			throw exception;
 		}
 	}
