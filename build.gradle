@@ -61,9 +61,14 @@ test {
 
 def jacocoExclude = ['com/conta/cloud/sat/SatCatalogApplication**',
 					'com/conta/cloud/sat/config/**',
-					'exception/**',
-					'com/conta/cloud/sat/rest/exception/**',
+					'exception/**',					
 					'com/conta/cloud/sat/mappers/**']
+					
+def jacocoExcludeVerification = ['com.conta.cloud.sat.SatCatalogApplication**',
+					'com.conta.cloud.sat.config**',
+					'com.conta.cloud.sat.rest.exception.ValidationMessageConstants**',
+					'exception**',					
+					'com.conta.cloud.sat.mappers.**']					
 
 jacoco {
 	toolVersion = '0.8.5'
@@ -85,23 +90,28 @@ jacocoTestReport {
 	}
 }
 
-jacocoTestCoverageVerification {
+jacocoTestCoverageVerification {	
 	violationRules {
-		rule {
-			limit {
-				minimum = 0.8
-			}
-		}
 
 		rule {
-			enabled = false
 			element = 'CLASS'
 			includes = ['com.conta.cloud.sat.*']
-
+			excludes = jacocoExcludeVerification
 			limit {
 				counter = 'LINE'
-				value = 'TOTALCOUNT'
-				maximum = 0.9
+				value = 'COVEREDRATIO'
+				minimum = 0.9
+			}
+		}
+		
+		rule {
+			element = 'CLASS'
+			includes = ['com.conta.cloud.sat.*']
+			excludes = jacocoExcludeVerification
+			limit {
+				counter = 'BRANCH'
+				value = 'COVEREDRATIO'
+				minimum = 0.9
 			}
 		}
 	}
