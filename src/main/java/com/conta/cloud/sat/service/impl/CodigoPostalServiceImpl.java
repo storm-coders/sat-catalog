@@ -15,12 +15,14 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import com.conta.cloud.sat.domain.CodigoPostal;
 import com.conta.cloud.sat.dto.CodigoPostalDTO;
+import com.conta.cloud.sat.exception.CatalogException;
+import com.conta.cloud.sat.exception.CatalogExceptionConstants;
+import com.conta.cloud.sat.exception.ErrorDetail;
 import com.conta.cloud.sat.mappers.CodigoPostalMapper;
 import com.conta.cloud.sat.persistence.CodigoPostalRepository;
 import com.conta.cloud.sat.service.CodigoPostalService;
 import com.conta.cloud.sat.service.ErrorCode;
-import exception.CatalogException;
-import exception.ErrorDetail;
+
 import lombok.Generated;
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,7 +52,7 @@ public class CodigoPostalServiceImpl implements CodigoPostalService {
 			log.error("Unable to select CodigoPostal from database - idEstado: {} - idMunicipio: {} - cp: {}",
 					idEstado, idMunicipio, codigoPostal, e);
 			CatalogException exception = new CatalogException(ErrorCode.INTERNAL,
-					Collections.singletonList(new ErrorDetail("500", "Error al seleccionar código postal")));
+					Collections.singletonList(new ErrorDetail(CatalogExceptionConstants.INTERNAL_CODE, INTERNAL_ERROR_MESSAGE)));
 			throw exception;
 		}
 	}

@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.conta.cloud.sat.exception.CatalogException;
+import com.conta.cloud.sat.exception.ErrorDetail;
 import com.conta.cloud.sat.service.ErrorCode;
-
-import exception.CatalogException;
-import exception.ErrorDetail;
 
 @Primary
 @ControllerAdvice

@@ -17,13 +17,14 @@ import org.springframework.util.StringUtils;
 
 import com.conta.cloud.sat.domain.Aduana;
 import com.conta.cloud.sat.dto.AduanaDTO;
+import com.conta.cloud.sat.exception.CatalogException;
+import com.conta.cloud.sat.exception.CatalogExceptionConstants;
+import com.conta.cloud.sat.exception.ErrorDetail;
 import com.conta.cloud.sat.mappers.AduanaMapper;
 import com.conta.cloud.sat.persistence.AduanaRepository;
 import com.conta.cloud.sat.service.AduanaService;
 import com.conta.cloud.sat.service.ErrorCode;
 
-import exception.CatalogException;
-import exception.ErrorDetail;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -51,7 +52,7 @@ public class AduanaServiceImpl implements AduanaService {
 		} catch (Exception e) {
 			log.error("Unable to fetch Aduana from database - description: {} ", description, e);
 			CatalogException ce = new CatalogException(ErrorCode.INTERNAL, //
-					Collections.singletonList(new ErrorDetail("500", "Error al seleccionar cátalogo de Aduanas")));
+					Collections.singletonList(new ErrorDetail(CatalogExceptionConstants.INTERNAL_CODE, INTERNAL_ERROR_MESSAGE)));
 			throw ce;
 		}
 	}

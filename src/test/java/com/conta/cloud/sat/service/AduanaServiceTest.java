@@ -28,11 +28,10 @@ import org.springframework.data.jpa.domain.Specification;
 
 import com.conta.cloud.sat.domain.Aduana;
 import com.conta.cloud.sat.dto.AduanaDTO;
+import com.conta.cloud.sat.exception.CatalogException;
 import com.conta.cloud.sat.mappers.AduanaMapper;
 import com.conta.cloud.sat.persistence.AduanaRepository;
 import com.conta.cloud.sat.service.impl.AduanaServiceImpl;
-
-import exception.CatalogException;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Aduana Service Testing")

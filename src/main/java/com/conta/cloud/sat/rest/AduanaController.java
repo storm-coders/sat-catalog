@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.conta.cloud.sat.config.SwaggerConfig;
 import com.conta.cloud.sat.dto.AduanaDTO;
+import com.conta.cloud.sat.exception.CatalogException;
 import com.conta.cloud.sat.rest.exception.ApiError;
 import com.conta.cloud.sat.rest.exception.ValidationMessageConstants;
 import com.conta.cloud.sat.service.AduanaService;
 
-import exception.CatalogException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

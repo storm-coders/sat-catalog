@@ -19,9 +19,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.conta.cloud.sat.dto.CodigoPostalDTO;
+import com.conta.cloud.sat.exception.CatalogException;
 import com.conta.cloud.sat.service.CodigoPostalService;
-
-import exception.CatalogException;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Codig Postal Controller Testing")

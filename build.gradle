@@ -61,13 +61,13 @@ test {
 
 def jacocoExclude = ['com/conta/cloud/sat/SatCatalogApplication**',
 					'com/conta/cloud/sat/config/**',
-					'exception/**',					
+					'com/conta/cloud/sat/exception/**',					
 					'com/conta/cloud/sat/mappers/**']
 					
 def jacocoExcludeVerification = ['com.conta.cloud.sat.SatCatalogApplication**',
 					'com.conta.cloud.sat.config**',
 					'com.conta.cloud.sat.rest.exception.ValidationMessageConstants**',
-					'exception**',					
+					'com.conta.cloud.sat.exception**',					
 					'com.conta.cloud.sat.mappers.**']					
 
 jacoco {
