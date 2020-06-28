@@ -26,11 +26,10 @@ import org.springframework.data.jpa.domain.Specification;
 import com.conta.cloud.sat.domain.CodigoPostal;
 import com.conta.cloud.sat.domain.CodigoPostalId;
 import com.conta.cloud.sat.dto.CodigoPostalDTO;
+import com.conta.cloud.sat.exception.CatalogException;
 import com.conta.cloud.sat.mappers.CodigoPostalMapper;
 import com.conta.cloud.sat.persistence.CodigoPostalRepository;
 import com.conta.cloud.sat.service.impl.CodigoPostalServiceImpl;
-
-import exception.CatalogException;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Codig Postal Service Testing")

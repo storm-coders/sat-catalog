@@ -2,9 +2,9 @@ package com.conta.cloud.sat.rest.exception;
 
 import java.util.List;
 
+import com.conta.cloud.sat.exception.ErrorDetail;
 import com.conta.cloud.sat.service.ErrorCode;
 
-import exception.ErrorDetail;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

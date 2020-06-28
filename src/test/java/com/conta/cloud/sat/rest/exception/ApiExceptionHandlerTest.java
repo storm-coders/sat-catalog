@@ -21,10 +21,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import com.conta.cloud.sat.exception.CatalogException;
+import com.conta.cloud.sat.exception.ErrorDetail;
 import com.conta.cloud.sat.service.ErrorCode;
-
-import exception.CatalogException;
-import exception.ErrorDetail;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Exception Handler Testing")

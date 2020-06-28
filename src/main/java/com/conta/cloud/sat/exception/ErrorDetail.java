@@ -1,4 +1,4 @@
-package exception;
+package com.conta.cloud.sat.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
