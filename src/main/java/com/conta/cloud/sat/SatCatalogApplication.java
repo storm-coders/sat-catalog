@@ -1,5 +1,7 @@
 package com.conta.cloud.sat;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,8 +15,12 @@ public class SatCatalogApplication {
 	}
 	
 	@Bean
-	 public MethodValidationPostProcessor methodValidationPostProcessor() {
-	      return new MethodValidationPostProcessor();
-	 }
+	public MethodValidationPostProcessor methodValidationPostProcessor() {
+	    return new MethodValidationPostProcessor();
+	}
 
+	@Bean
+	public ObjectMapper objectMapper() {
+		return new ObjectMapper();	
+	}
 }
