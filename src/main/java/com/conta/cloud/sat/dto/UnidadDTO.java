@@ -17,7 +17,7 @@ public class UnidadDTO {
 
     private String simbolo;
 
-    private Date fechaInicio;
+    private String fechaInicio;
 
-    private Date fechaFin;
+    private String fechaFin;
 }

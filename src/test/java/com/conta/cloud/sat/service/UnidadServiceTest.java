@@ -63,8 +63,8 @@ public class UnidadServiceTest {
         assertEquals(unidad.getIdUnidad(), unidadDTO.getId());
         assertEquals(unidad.getNombre(), unidadDTO.getNombre());
         assertEquals(unidad.getSimbolo(), unidadDTO.getSimbolo());
-        assertEquals(unidad.getFechaInicio(), unidadDTO.getFechaInicio());
-        assertEquals(unidad.getFechaFin(), unidadDTO.getFechaFin());
+        assertEquals("", unidadDTO.getFechaInicio());
+        assertEquals("", unidadDTO.getFechaFin());
 
         verify(repository).findAll();
     }
@@ -108,8 +108,8 @@ public class UnidadServiceTest {
         assertEquals(unidad.getIdUnidad(), unidadDTO.getId());
         assertEquals(unidad.getNombre(), unidadDTO.getNombre());
         assertEquals(unidad.getSimbolo(), unidadDTO.getSimbolo());
-        assertEquals(unidad.getFechaInicio(), unidadDTO.getFechaInicio());
-        assertEquals(unidad.getFechaFin(), unidadDTO.getFechaFin());
+        assertEquals("", unidadDTO.getFechaInicio());
+        assertEquals("", unidadDTO.getFechaFin());
     }
 
     @Test
@@ -123,7 +123,7 @@ public class UnidadServiceTest {
         assertEquals(unidad.getIdUnidad(), unidadDTO.getId());
         assertEquals(unidad.getNombre(), unidadDTO.getNombre());
         assertEquals(unidad.getSimbolo(), unidadDTO.getSimbolo());
-        assertEquals(unidad.getFechaInicio(), unidadDTO.getFechaInicio());
-        assertEquals(unidad.getFechaFin(), unidadDTO.getFechaFin());
+        assertEquals("", unidadDTO.getFechaInicio());
+        assertEquals("", unidadDTO.getFechaFin());
     }
 }
