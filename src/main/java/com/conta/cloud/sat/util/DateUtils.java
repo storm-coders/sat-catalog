@@ -22,4 +22,13 @@ public class DateUtils {
             return null;
         }
     }
+
+    public static String fromDate(Date date) {
+        if(date==null) {
+            return "";
+        } else {
+            SimpleDateFormat format = new SimpleDateFormat(DT_FORMAT);
+            return format.format(date);
+        }
+    }
 }

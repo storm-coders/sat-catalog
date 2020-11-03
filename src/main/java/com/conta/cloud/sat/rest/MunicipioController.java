@@ -47,7 +47,7 @@ public class MunicipioController {
 		@ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = "Autorización requerida"),
 	})
 	@GetMapping
-	@PreAuthorize("isAuthenticated")
+	@PreAuthorize(value = "isAuthenticated()")
 	public ResponseEntity<Collection<MunicipioDTO>> findMunicipios(
 			@RequestParam(required = false)
 			@ApiParam(name = "idEstado", value = "Id de Estado si se require filtrar")
