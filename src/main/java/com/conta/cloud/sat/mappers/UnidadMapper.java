@@ -6,23 +6,16 @@ import org.mapstruct.Mappings;
 import org.mapstruct.Named;
 
 import com.conta.cloud.sat.dto.UnidadDTO;
-import com.conta.cloud.sat.util.DateUtils;
 import com.conta.cloud.sat.domain.Unidad;
-
-import java.util.Date;
 
 @Mapper(componentModel = "spring")
 public interface UnidadMapper {
 
     @Mappings({
         @Mapping(source = "idUnidad", target = "id"),
-        @Mapping(source = "fechaInicio", target = "fechaInicio", qualifiedByName = "dateToString"), 
-        @Mapping(source = "fechaFin", target = "fechaFin", qualifiedByName = "dateToString"),
+        @Mapping(target= "fechaInicio", expression = "java(com.conta.cloud.sat.util.DateUtils.fromDate(unidad.getFechaInicio()))"),
+		@Mapping(target= "fechaFin", expression = "java(com.conta.cloud.sat.util.DateUtils.fromDate(unidad.getFechaFin()))")
     })
     UnidadDTO fromEntity(Unidad unidad);
 
-    @Named("dateToString")
-    default String dateToString(Date date) {
-        return DateUtils.fromDate(date);
-    }
 }

@@ -30,6 +30,7 @@ import com.conta.cloud.sat.exception.CatalogException;
 import com.conta.cloud.sat.mappers.CodigoPostalMapper;
 import com.conta.cloud.sat.persistence.CodigoPostalRepository;
 import com.conta.cloud.sat.service.impl.CodigoPostalServiceImpl;
+import com.conta.cloud.sat.util.DateUtils;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Codig Postal Service Testing")
@@ -43,12 +44,12 @@ public class CodigoPostalServiceTest {
 	
 	@Mock
 	private CodigoPostalRepository codigoPostalRepository;
-	
+	private final String dateExpected = "18/05/2020";
 	@BeforeEach
 	public void setup() {
 		codigoPostalService = new CodigoPostalServiceImpl(codigoPostalRepository, mapper);
 		codigoPostal = new CodigoPostal(new CodigoPostalId("43600", "HID"),
-				"007", false, new Date(), null);
+				"007", false, DateUtils.fromString(dateExpected), DateUtils.fromString(dateExpected));
 	}
 	
 	@Test
@@ -77,8 +78,8 @@ public class CodigoPostalServiceTest {
 		dtos.forEach(dto -> {
 			assertNotNull(dto.getCodigoMunicipio());
 			assertFalse(dto.getEstimuloEnFrontera());
-			assertNotNull(dto.getFechaInicio());
-			assertNull(dto.getFechaFin());
+			assertEquals(dateExpected, dto.getFechaInicio());
+			assertEquals(dateExpected, dto.getFechaFin());
 			assertEquals("43600", dto.getId());
 			assertEquals("HID", dto.getIdEstado());
 		});

@@ -11,7 +11,9 @@ import com.conta.cloud.sat.dto.AduanaDTO;
 public interface AduanaMapper {
 
 	@Mappings({
-		@Mapping(source = "idAduana", target = "id")
+		@Mapping(source = "idAduana", target = "id"),
+		@Mapping(target= "fechaInicio", expression = "java(com.conta.cloud.sat.util.DateUtils.fromDate(aduana.getFechaInicio()))"),
+		@Mapping(target= "fechaFin", expression = "java(com.conta.cloud.sat.util.DateUtils.fromDate(aduana.getFechaFin()))")
 	})
 	AduanaDTO fromEntity(Aduana aduana);
 }

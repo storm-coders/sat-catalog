@@ -15,6 +15,8 @@ public interface CodigoPostalMapper {
 		@Mapping(source = "id.idEstado", target = "idEstado"),
 		@Mapping(source = "id.idCodigoPostal", target = "id"),
 		@Mapping(source = "estimuloFrontera", target = "estimuloEnFrontera"),
+		@Mapping(target= "fechaInicio", expression = "java(com.conta.cloud.sat.util.DateUtils.fromDate(codigoPostal.getFechaInicio()))"),
+		@Mapping(target= "fechaFin", expression = "java(com.conta.cloud.sat.util.DateUtils.fromDate(codigoPostal.getFechaFin()))")
 	})
 	CodigoPostalDTO fromEntity(CodigoPostal codigoPostal);
 }
