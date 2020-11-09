@@ -1,7 +1,5 @@
 package com.conta.cloud.sat.dto;
 
-import java.util.Date;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -27,8 +25,8 @@ public class CodigoPostalDTO {
 	private Boolean estimuloEnFrontera;
 	
 	@ApiModelProperty(name = "fechaInicio", value = "Fecha inicial para utilizar el codigo postal", required = true)
-	private Date fechaInicio;
+	private String fechaInicio;
 	
 	@ApiModelProperty(name = "fechaFin", value = "Fecha final para utilizar el codigo postal", required = false)
-	private Date fechaFin;
+	private String fechaFin;
 }

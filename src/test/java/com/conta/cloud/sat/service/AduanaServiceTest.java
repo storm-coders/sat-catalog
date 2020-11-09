@@ -1,7 +1,6 @@
 package com.conta.cloud.sat.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
@@ -76,15 +75,15 @@ public class AduanaServiceTest {
 	@Test
 	public void testSuccessResponse()  throws Exception {
 		when(repository.findAll(ArgumentMatchers.<Specification<Aduana>>any()))
-		.thenReturn(Collections.singletonList(new Aduana("001", "Test", new Date(), null)));
+		.thenReturn(Collections.singletonList(new Aduana("001", "Test", null, null)));
 		
 		Collection<AduanaDTO> aduanas = aduanaService.findAduanas("Test");
 		
 		for (AduanaDTO aduanaDTO : aduanas) {
 			assertEquals("001", aduanaDTO.getId());
 			assertEquals("Test", aduanaDTO.getDescripcion());
-			assertNotNull(aduanaDTO.getFechaInicio());
-			assertNull(aduanaDTO.getFechaFin());
+			assertEquals("", aduanaDTO.getFechaInicio());
+			assertEquals("", aduanaDTO.getFechaFin());
 		}
 	}
 	
