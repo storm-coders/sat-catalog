@@ -26,6 +26,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         public static final String MUNICIPIO_TAG = "Municipios";
         public static final String PAIS_TAG = "Paises";
         public static final String UNIDAD_TAG = "Unidades de Medida";
+	public static final String PRODUCTO_TAG = "Productos";
         public static final String APPLICATION_JSON = "application/json";
 	private final Contact contact = new Contact("Victor de la Cruz",
 			"https://www.codementor.io/@vcg_cruz", ""); 
@@ -43,6 +44,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .tags(new Tag(ADUANA_TAG, "Servicios REST para obtener Aduanas"))
                 .tags(new Tag(PAIS_TAG, "Servicios REST para obtener paises"))
                 .tags(new Tag(UNIDAD_TAG, "Servicios REST para obtener unidades de medida"))
+		.tags(new Tag(PRODUCTO_TAG, "Servicio REST para obtener productos"))
                 ;
              
 	}
