@@ -49,8 +49,8 @@ public class AduanaController {
 	@PreAuthorize(value = "isAuthenticated()")
 	@GetMapping
 	public ResponseEntity<Collection<AduanaDTO>> getAduanas(
-			@RequestParam()
-			@Pattern(regexp = "[a-zA-Z]+", message = ValidationMessageConstants.INVALID_DESC)
+			@RequestParam(required = false)
+			@Pattern(regexp = "[a-zA-Z]*", message = ValidationMessageConstants.INVALID_DESC)
 			String descripcion
 			) throws CatalogException{
 		return new ResponseEntity<Collection<AduanaDTO>>(aduanaService.findAduanas(descripcion), HttpStatus.OK);
