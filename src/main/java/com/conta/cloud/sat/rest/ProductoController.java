@@ -45,7 +45,7 @@ public class ProductoController {
       @ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = "Accesso denegado", response = ApiError.class)
    })
    @GetMapping()
-   //@PreAuthorize("isAuthenticaded()")
+   @PreAuthorize("isAuthenticaded()")
    public ResponseEntity<Collection<ProductoDTO>> findProductos(
 		   @ApiParam(name="id", value="id de Producto a buscar") //
 		   @RequestParam(required = false)//
