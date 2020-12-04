@@ -1,6 +1,8 @@
 package com.conta.cloud.sat.dto;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ApiModel(description = "Municipio")
 public class MunicipioDTO {
 	
 	@ApiModelProperty(name = "id", value = "Id de municipio")
