@@ -21,7 +21,10 @@ public class CatalogException extends Exception{
 	 */
 	private static final long serialVersionUID = -2808432347078432353L;
 	
-	
+        public CatalogException(ErrorCode errCode, String code, String reason){
+	   this.code = errCode;
+	   this.addError(new ErrorDetail(code, reason));
+	}	
 	
 	public void addError(ErrorDetail detail) {
 		this.errors.add(detail);
