@@ -1,12 +1,26 @@
+buildscript {
+   repositories {
+     mavenCentral()
+     maven {
+        url uri('../rapi-generator/build/repos/snapshots')
+     }
+   }
+
+   dependencies {
+      classpath('com.vcgdev.plugin:rapi-generator:1.2')
+   }
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.2.6.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 	id 'jacoco'
-	id 'net.ltgt.apt' version '0.21'
+	id 'net.ltgt.apt' version '0.21'        
 }
 apply plugin: 'net.ltgt.apt-idea'
 apply plugin: 'net.ltgt.apt-eclipse'
+apply plugin: 'com.vcgdev.plugin'
 group = 'com.conta.cloud.sat'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -117,3 +131,17 @@ jacocoTestCoverageVerification {
 		}
 	}
 }
+
+genRest{
+	basePackage = "com.conta.cloud.sat"
+	servicePackage = "service"
+	repositoryPackage = "persistence"
+	entityPackage = "domain"
+	resourcePackage = "rest"
+	dtoPackage = "dto"
+        exceptionClass = "CatalogException"
+        exceptionPackage = "exception"
+	mapperPackage = "mappers"
+}
+
+
