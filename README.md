@@ -24,3 +24,11 @@ Catalogs listed in https://www.sat.gob.mx/consultas/53693/catalogo-de-productos-
 * GET /direcciones/municipios
 * GET /direcciones/estados
 * GET /direcciones/codigos-postales
+
+##Configs
+
+## RApi plugin
+Download from repository and run
+```
+$ ./gradlew clean build publish
+```
