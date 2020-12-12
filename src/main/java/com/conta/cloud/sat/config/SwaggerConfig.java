@@ -28,7 +28,8 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         public static final String TAG_UNIDAD = "Unidades de Medida";
 	public static final String TAG_PRODUCTO = "Productos";
 	public static final String TAG_FORMA_PAGO = "Formas de Pago";
-	public static final String TAG_IMPUESTOS = "Impuestos";
+        public static final String TAG_IMPUESTOS = "Impuestos";
+	public static final String TAG_MONEDA = "Monedas";
         public static final String APPLICATION_JSON = "application/json";
 	private final Contact contact = new Contact("Victor de la Cruz",
 			"https://www.codementor.io/@vcg_cruz", ""); 
@@ -48,7 +49,8 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .tags(new Tag(TAG_UNIDAD, "Servicios REST para obtener unidades de medida"))
 		.tags(new Tag(TAG_PRODUCTO, "Servicio REST para obtener productos"))
 		.tags(new Tag(TAG_FORMA_PAGO, "Servicio REST para obtener Formas de Pago"))
-		.tags(new Tag(TAG_IMPUESTOS, "Servicio REST para obtener Impuestos"))
+                .tags(new Tag(TAG_IMPUESTOS, "Servicio REST para obtener Impuestos"))
+		.tags(new Tag(TAG_MONEDA, "Servicio REST para obtener Monedas"))
                 ;
              
 	}
