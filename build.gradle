@@ -1,8 +1,14 @@
 buildscript {
    repositories {
+     //def uname = System.getenv("artifactory_user")
+     //def pwd = System.getEnv("artifactory_password")
      mavenCentral()
      maven {
-        url uri('../rapi-generator/build/repos/snapshots')
+        credentials {
+           username System.getenv("artifactory_user")
+           password System.getenv("artifactory_password")
+        }
+        url 'https://vsatdev.jfrog.io/artifactory/gradle-dev-local'
      }
    }
 
@@ -24,7 +30,6 @@ apply plugin: 'com.vcgdev.plugin'
 group = 'com.conta.cloud.sat'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-
 configurations {
 	developmentOnly
 	runtimeClasspath {
@@ -143,5 +148,4 @@ genRest{
         exceptionPackage = "exception"
 	mapperPackage = "mappers"
 }
-
 
