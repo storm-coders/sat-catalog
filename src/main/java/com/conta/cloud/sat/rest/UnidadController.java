@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-@Api(produces = SwaggerConfig.APPLICATION_JSON, tags = SwaggerConfig.UNIDAD_TAG)
+@Api(produces = SwaggerConfig.APPLICATION_JSON, tags = SwaggerConfig.TAG_UNIDAD)
 @RestController
 @RequestMapping("unidades")
 public class UnidadController {
@@ -38,11 +38,11 @@ public class UnidadController {
 
     @ApiOperation(value = "Obtener codigos unidades de medida",httpMethod = "GET", response = Collection.class)
 	@ApiResponses(value = {
-		@ApiResponse(code = HttpServletResponse.SC_OK, message = "Petición exitosa"),
-		@ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = "Error en parametros enviados", response = ApiError.class),
-		@ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message = "Error al procesar peticion", response = ApiError.class),
-		@ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = "Accesso denegado"),
-		@ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = "Autorización requerida"),
+		@ApiResponse(code = HttpServletResponse.SC_OK, message = WebAppConstants.SUCCESS_MESSAGE),
+		@ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = WebAppConstants.BAD_REQUEST_MESSAGE, response = ApiError.class),
+		@ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message = WebAppConstants.INTERNAL_SERVER_ERROR_MESSAGE, response = ApiError.class),
+		@ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = WebAppConstants.FORBIDDEN_MESSAGE),
+		@ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = WebAppConstants.NOT_AUTHORIZED_MESSAGE),
 	})
     @GetMapping
     @PreAuthorize(value = "isAuthenticated()")

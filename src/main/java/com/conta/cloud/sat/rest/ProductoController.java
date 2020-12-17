@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.ApiResponse;
 
-@Api(produces = SwaggerConfig.APPLICATION_JSON, tags = SwaggerConfig.PRODUCTO_TAG)
+@Api(produces = SwaggerConfig.APPLICATION_JSON, tags = SwaggerConfig.TAG_PRODUCTO)
 @RestController
 @RequestMapping("productos")
 public class ProductoController {
@@ -38,11 +38,11 @@ public class ProductoController {
 
    @ApiOperation(value = "Obtener catálogo de productos", httpMethod = "GET", response = Collection.class)
    @ApiResponses(value = {
-      @ApiResponse(code = HttpServletResponse.SC_OK, message = "petición exitosa", response = ProductoDTO.class),
-      @ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = "Error en parametros enviados", response = ApiError.class),
-      @ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message= "Error al procesar petición", response = ApiError.class),
-      @ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = "Autorización requerida", response = ApiError.class),
-      @ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = "Accesso denegado", response = ApiError.class)
+      @ApiResponse(code = HttpServletResponse.SC_OK, message = WebAppConstants.SUCCESS_MESSAGE, response = ProductoDTO.class),
+      @ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = WebAppConstants.BAD_REQUEST_MESSAGE, response = ApiError.class),
+      @ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message= WebAppConstants.INTERNAL_SERVER_ERROR_MESSAGE, response = ApiError.class),
+      @ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = WebAppConstants.NOT_AUTHORIZED_MESSAGE, response = ApiError.class),
+      @ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = WebAppConstants.FORBIDDEN_MESSAGE, response = ApiError.class)
    })
    @GetMapping()
    @PreAuthorize("isAuthenticaded()")

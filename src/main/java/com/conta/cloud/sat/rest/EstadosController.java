@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("direcciones/estados")
-@Api(tags = {SwaggerConfig.ESTADO_TAG}, produces = "application/json")
+@Api(tags = {SwaggerConfig.TAG_ESTADO}, produces = SwaggerConfig.APPLICATION_JSON)
 public class EstadosController {
 
 	private final EstadoService estadoService;
@@ -39,11 +39,11 @@ public class EstadosController {
 	
 	@ApiOperation(value = "Obtener catálogo de Estados",httpMethod = "GET", response = Collection.class)
 	@ApiResponses(value = {
-		@ApiResponse(code = HttpServletResponse.SC_OK, message = "Petición exitosa"),
-		@ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = "Error en parametros enviados", response = ApiError.class),
-		@ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message = "Error al procesar peticion", response = ApiError.class),
-		@ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = "Accesso denegado"),
-		@ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = "Autorización requerida"),
+		@ApiResponse(code = HttpServletResponse.SC_OK, message = WebAppConstants.SUCCESS_MESSAGE),
+		@ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = WebAppConstants.BAD_REQUEST_MESSAGE, response = ApiError.class),
+		@ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message = WebAppConstants.INTERNAL_SERVER_ERROR_MESSAGE, response = ApiError.class),
+		@ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = WebAppConstants.FORBIDDEN_MESSAGE),
+		@ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = WebAppConstants.NOT_AUTHORIZED_MESSAGE),
 	})
 	@GetMapping
 	@PreAuthorize("isAuthenticated()")
