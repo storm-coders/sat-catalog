@@ -35,10 +35,10 @@ public class ImpuestoController {
 
    @ApiOperation(value = "Obtener catálogo de Impuestos",httpMethod = "GET", response = Collection.class)
    @ApiResponses(value = {
-      @ApiResponse(code = HttpServletResponse.SC_OK, message = "Petición exitosa", response = ImpuestoDTO.class),
-      @ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message = "Error al procesar petición", response = ApiError.class),
-      @ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = "Acceso denegado", response = ApiError.class),
-      @ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = "Autorización requerida", response = ApiError.class)
+      @ApiResponse(code = HttpServletResponse.SC_OK, message = WebAppConstants.SUCCESS_MESSAGE, response = ImpuestoDTO.class),
+      @ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message = WebAppConstants.INTERNAL_SERVER_ERROR_MESSAGE, response = ApiError.class),
+      @ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = WebAppConstants.FORBIDDEN_MESSAGE, response = ApiError.class),
+      @ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = WebAppConstants.NOT_AUTHORIZED_MESSAGE, response = ApiError.class)
    })
    @GetMapping
    @PreAuthorize(value = "isAuthenticated()")

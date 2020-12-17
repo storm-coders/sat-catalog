@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.Collection;
 
-@Api(produces = SwaggerConfig.APPLICATION_JSON, tags = SwaggerConfig.FORMA_PAGO)
+@Api(produces = SwaggerConfig.APPLICATION_JSON, tags = SwaggerConfig.TAG_FORMA_PAGO)
 @RestController()
 @RequestMapping("formas-pago")
 public class FormaPagoController {
@@ -35,11 +35,11 @@ public class FormaPagoController {
 
    @ApiOperation(value = "Obtener catálogo de Formas de Pago", httpMethod = "GET", response = Collection.class)
    @ApiResponses(value = {
-   	@ApiResponse(code = HttpServletResponse.SC_OK, message = "Petición exitosa", response = FormaPagoDTO.class),
-	@ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = "Error en parametros", response = ApiError.class),
-	@ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message = "Error al procesar petición", response = ApiError.class),
-	@ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = "Autorización requerida", response = ApiError.class),
-	@ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = "Acceso denegado", response = ApiError.class)
+   	@ApiResponse(code = HttpServletResponse.SC_OK, message = WebAppConstants.SUCCESS_MESSAGE, response = FormaPagoDTO.class),
+	@ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = WebAppConstants.BAD_REQUEST_MESSAGE, response = ApiError.class),
+	@ApiResponse(code = HttpServletResponse.SC_INTERNAL_SERVER_ERROR, message = WebAppConstants.INTERNAL_SERVER_ERROR_MESSAGE, response = ApiError.class),
+	@ApiResponse(code = HttpServletResponse.SC_UNAUTHORIZED, message = WebAppConstants.NOT_AUTHORIZED_MESSAGE, response = ApiError.class),
+	@ApiResponse(code = HttpServletResponse.SC_FORBIDDEN, message = WebAppConstants.FORBIDDEN_MESSAGE, response = ApiError.class)
    })
    @GetMapping
    @PreAuthorize("isAuthenticaded()")

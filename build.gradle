@@ -87,6 +87,7 @@ def jacocoExclude = ['com/conta/cloud/sat/SatCatalogApplication**',
 def jacocoExcludeVerification = ['com.conta.cloud.sat.SatCatalogApplication**',
 					'com.conta.cloud.sat.config**',
 					'com.conta.cloud.sat.rest.exception.ValidationMessageConstants**',
+                                        'com.conta.cloud.sat.rest.WebAppConstants**',
 					'com.conta.cloud.sat.exception**',					
 					'com.conta.cloud.sat.mappers.**']					
 
