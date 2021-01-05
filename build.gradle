@@ -1,7 +1,5 @@
 buildscript {
    repositories {
-     //def uname = System.getenv("artifactory_user")
-     //def pwd = System.getEnv("artifactory_password")
      mavenCentral()
      maven {
         credentials {
@@ -13,7 +11,7 @@ buildscript {
    }
 
    dependencies {
-      classpath('com.vcgdev.plugin:rapi-generator:1.2')
+      classpath('com.vcgdev.plugin:rapi-generator:1.2.1')
    }
 }
 
