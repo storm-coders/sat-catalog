@@ -1,13 +1,10 @@
-package com.conta.cloud.sat;
+package com.conta.cloud.sat.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
-import com.conta.cloud.sat.domain.IncluirPropiedadConverter;
-import com.conta.cloud.sat.domain.IncluirPropiedad;
 
 @DisplayName("InvluirPropiedad Converter Testing")
 public class IncluirPropiedadConverterTest {
