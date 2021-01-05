@@ -8,7 +8,6 @@ import static org.mockito.Mockito.when;
 import java.util.Collection;
 import java.util.Collections;
 
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.anyString;
 
 import org.junit.jupiter.api.DisplayName;
