@@ -3,7 +3,6 @@ package com.conta.cloud.sat.mappers;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import org.mapstruct.Named;
 
 import com.conta.cloud.sat.dto.UnidadDTO;
 import com.conta.cloud.sat.domain.Unidad;
