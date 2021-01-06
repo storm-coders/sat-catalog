@@ -9,10 +9,9 @@ import org.springframework.data.domain.Page;
 * Created using Rest API Generator
 * Basic CRUD service
 */
-public interface MonedaService{
+public interface MonedaService {
 
-    // TODO add specific message
-    String INTERNAL_ERROR_MESSAGE = "";
+    String INTERNAL_ERROR_MESSAGE = "Error al procesar Monedas";
 
     /**
     * Method to add new Moneda in database

@@ -1,7 +1,5 @@
 package com.conta.cloud.sat.dto;
 
-import java.util.Date;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
