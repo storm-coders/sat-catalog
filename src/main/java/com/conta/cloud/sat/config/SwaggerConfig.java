@@ -32,6 +32,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         public static final String TAG_MONEDA = "Monedas";
         public static final String TAG_METODO_PAGO = "Metodos de Pago";
         public static final String TAG_NO_PEDIMENTO_ADUANAL = "Numero Pedimento Aduanal";
+        public static final String TAG_PATENTE_ADUANAL = "Patente Aduanal";
         public static final String APPLICATION_JSON = "application/json";
 	private final Contact contact = new Contact("Victor de la Cruz",
 			"https://www.codementor.io/@vcg_cruz", ""); 
@@ -55,6 +56,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .tags(new Tag(TAG_MONEDA, "Servicio REST para obtener Monedas"))
                 .tags(new Tag(TAG_METODO_PAGO, "Servicio REST para obtener metodos de Pago"))
                 .tags(new Tag(TAG_NO_PEDIMENTO_ADUANAL, "Servicio REST para obtener numeros de pedimento aduanal"))
+                .tags(new Tag(TAG_PATENTE_ADUANAL, "Servicio REST para obtener patentes aduanales"))
                 ;
              
 	}
