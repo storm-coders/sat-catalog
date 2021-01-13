@@ -35,6 +35,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         public static final String TAG_PATENTE_ADUANAL = "Patente Aduanal";
         public static final String TAG_REGIMEN_FISCAL = "Regimen Fiscal";
         public static final String TAG_TASA_CUOTA = "Tasa Cuota";
+        public static final String TAG_TIPO_COMPROBANTE = "Tipo de Comprobante";
         public static final String APPLICATION_JSON = "application/json";
 	private final Contact contact = new Contact("Victor de la Cruz",
 			"https://www.codementor.io/@vcg_cruz", ""); 
@@ -59,9 +60,10 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .tags(new Tag(TAG_METODO_PAGO, "Servicio REST para obtener metodos de Pago"))
                 .tags(new Tag(TAG_NO_PEDIMENTO_ADUANAL, "Servicio REST para obtener numeros de pedimento aduanal"))
                 .tags(new Tag(TAG_PATENTE_ADUANAL, "Servicio REST para obtener patentes aduanales"))
-                .tags(new Tag(TAG_REGIMEN_FISCAL, "Servicio REST para obtener Regimenes Fiscales"))
-                .tags(new Tag(TAG_TASA_CUOTA, "Servicio REST para obtener Tasa/Cuota"))
-                ;
+                .tags(new Tag(TAG_REGIMEN_FISCAL, "Servicio REST para obtener Regimenes Fiscales"), //
+                        new Tag(TAG_TASA_CUOTA, "Servicio REST para obtener Tasa/Cuota"), //
+                        new Tag(TAG_TIPO_COMPROBANTE, "Servicio REST para obtener tipos de comprobante")
+                );
              
 	}
 	
