@@ -37,6 +37,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         public static final String TAG_TASA_CUOTA = "Tasa Cuota";
         public static final String TAG_TIPO_COMPROBANTE = "Tipo de Comprobante";
         public static final String TAG_TIPO_RELACION = "Tipo de Relacion";
+        public static final String TAG_USO_CFDI = "Usos CFDI";
         public static final String APPLICATION_JSON = "application/json";
 	private final Contact contact = new Contact("Victor de la Cruz",
 			"https://www.codementor.io/@vcg_cruz", ""); 
@@ -64,7 +65,8 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .tags(new Tag(TAG_REGIMEN_FISCAL, "Servicio REST para obtener Regimenes Fiscales"), //
                         new Tag(TAG_TASA_CUOTA, "Servicio REST para obtener Tasa/Cuota"), //
                         new Tag(TAG_TIPO_COMPROBANTE, "Servicio REST para obtener tipos de comprobante"), //
-                        new Tag(TAG_TIPO_RELACION, "Servicio REST para obtener tipos de relacion")
+                        new Tag(TAG_TIPO_RELACION, "Servicio REST para obtener tipos de relacion"), //
+                        new Tag(TAG_USO_CFDI, "Servicio REST para obtener usos de CFDI") //
                 );
              
 	}
